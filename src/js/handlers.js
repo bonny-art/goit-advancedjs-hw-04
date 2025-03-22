@@ -11,27 +11,27 @@ export const handleImagesSearch = e => {
   e.preventDefault();
   refs.gallery.innerHTML = '';
 
+  refs.loadMoreBtn.classList.add('visually-hidden');
+
   const input = refs.form.elements.search;
 
   const query = input.value.trim();
+
+  fetchOptions.query = query;
+  fetchOptions.page = 1;
+
+  input.value = '';
 
   if (query === '') {
     iziToast.show({
       message: 'Oops! Looks like you forgot to enter something.',
     });
-    input.value = '';
+
     return;
   }
 
-  refs.loadMoreBtn.classList.add('visually-hidden');
   refs.loader.classList.remove('hidden');
-
   refs.searchBtn.disabled = true;
-
-  input.value = '';
-
-  fetchOptions.query = query;
-  fetchOptions.page = 1;
 
   getImages(fetchOptions)
     .then(data => {

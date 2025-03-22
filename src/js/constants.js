@@ -5,7 +5,7 @@ export const fetchOptions = {
 };
 
 export const scrollConfig = {
-  scrollYAmount: 0,
+  scrollY: 0,
 };
 
 export const SCROLL_MULTIPLIER = 2;
