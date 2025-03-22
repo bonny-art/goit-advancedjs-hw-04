@@ -33,7 +33,7 @@ export const renderGallery = images => {
       `;
   const galleryMarkup = images.map(image => itemMarkup(image)).join('');
 
-  refs.gallery.innerHTML = galleryMarkup;
+  refs.gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
   lightbox.refresh();
 };

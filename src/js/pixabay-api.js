@@ -11,12 +11,14 @@ axios.defaults.params = {
   safesearch: 'true',
 };
 
-export const getImages = async query => {
+export const getImages = async fetchOptions => {
   const params = {
-    q: query,
+    q: fetchOptions.query,
+    page: fetchOptions.page,
+    per_page: fetchOptions.perPage,
   };
 
   const { data } = await axios.get('/', { params });
-  console.log('🚀 ~ data:', data);
+
   return data;
 };

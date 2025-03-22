@@ -33,9 +33,9 @@
   }
 }
 
-.input-button {
-  width: 91px;
+.button {
   height: 40px;
+
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
@@ -59,6 +59,10 @@
   &:not(:disabled):hover {
     background: #6c8cff;
   }
+}
+
+.input-button {
+  width: 91px;
 }
 
 .gallery {
@@ -113,5 +117,10 @@
 }
 
 .loader {
+  margin: 0 auto;
+}
+
+.load-more-button {
+  width: 130px;
   margin: 0 auto;
 }
