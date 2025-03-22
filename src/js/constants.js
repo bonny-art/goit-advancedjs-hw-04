@@ -3,3 +3,9 @@ export const fetchOptions = {
   perPage: 15,
   query: '',
 };
+
+export const scrollConfig = {
+  scrollYAmount: 0,
+};
+
+export const SCROLL_MULTIPLIER = 2;

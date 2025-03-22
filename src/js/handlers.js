@@ -5,7 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import { getImages } from './pixabay-api';
 import { renderGallery } from './render-functions';
-import { fetchOptions } from './constants';
+import { fetchOptions, SCROLL_MULTIPLIER, scrollConfig } from './constants';
 
 export const handleImagesSearch = e => {
   e.preventDefault();
@@ -43,6 +43,10 @@ export const handleImagesSearch = e => {
 
       renderGallery(data.hits);
 
+      const card = document.querySelector('.card');
+      const cardHeight = Math.ceil(card.getBoundingClientRect().height);
+      scrollConfig.scrollY = cardHeight * SCROLL_MULTIPLIER;
+
       const hasNextPage =
         fetchOptions.page * fetchOptions.perPage < data.totalHits;
 
@@ -73,6 +77,11 @@ export const handleLoadMore = () => {
   getImages(fetchOptions)
     .then(data => {
       renderGallery(data.hits);
+
+      window.scrollBy({
+        top: scrollConfig.scrollY,
+        behavior: 'smooth',
+      });
 
       const hasNextPage =
         fetchOptions.page * fetchOptions.perPage < data.totalHits;
