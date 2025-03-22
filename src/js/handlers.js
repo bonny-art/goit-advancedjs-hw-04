@@ -39,6 +39,8 @@ export const handleImagesSearch = e => {
         iziToast.show({
           message: `Sorry, there are no images matching your search query. Please try again!`,
         });
+
+        return;
       }
 
       renderGallery(data.hits);
