@@ -23,6 +23,20 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!-- <section class="section">
+      <div class="cintainer">
+        <div style="display: flex; gap: 20px">
+          <div style="width: 300px; height: 1000px; background: teal">
+            <load src="partials/bonny-loader.html" color="dark" size="small" />
+            <load src="partials/bonny-loader.html" color="dark" size="medium" />
+          </div>
+
+          <div style="width: 600px; height: 500px; background: orange">
+            <load src="partials/bonny-loader.html" color="light" size="big" />
+          </div>
+        </div>
+      </div>
+    </section> -->
     <section class="section">
       <div class="container photos-container">
         <form class="form">
@@ -46,7 +60,10 @@
           Load more
         </button>
 
-        <div class="loader js-loader hidden"></div>
+        <!-- <div class="loader js-loader hidden"></div> -->
+        <div class="bonny-loader js-loader hidden">
+          <load src="partials/bonny-loader.html" color="dark" size="medium" />
+        </div>
       </div>
     </section>
 

@@ -13,4 +13,7 @@
 
   /* Transitions */
   --fast-trns: 300ms ease;
+
+  /* Durations */
+  --anim-duration: 2s;
 }
